@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piazze di Sicilia</title>
+    <!-- COLLEGAMENTO AL FILE CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="site-title" onclick="mostraSezione('home')">Piazze di Sicilia</h1>
+            <nav class="nav-menu">
+                <button onclick="mostraSezione('home')" class="nav-button">HOME</button>
+                <button onclick="mostraSezione('piazze')" class="nav-button">PIAZZE</button>
+                <button onclick="mostraSezione('esperienze')" class="nav-button">ESPERIENZE</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <main class="container">
+
+        <!-- 1. HOME -->
+        <section id="sec-home" style="display: flex; flex-direction: column; gap: 3rem;">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <img src="immagini/1.png" class="hero-image" alt="Hero Piazza">
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Scopri le piazze più iconiche di Sicilia</h2>
+                    <p class="hero-text">
+                        Passando da Palermo a Catania e Siracusa: piazze simbolo dove storia, architettura e vita quotidiana si incontrano. Clicca sulle card per approfondire ogni tappa!
+                    </p>
+                    <div class="hero-buttons">
+                        <button onclick="mostraSezione('piazze')" class="btn-primary">Esplora le piazze</button>
+                        <button onclick="mostraSezione('esperienze')" class="btn-primary">Cosa fare</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Griglia Piazze -->
+            <div>
+                <h3 class="section-title">Piazze in primo piano</h3>
+                <div class="cards-grid">
+                    <!-- Card 1 -->
+                    <div class="card card-blue">
+                        <div>
+                            <div class="card-tags">
+                                <span class="tag">PALERMO</span>
+                                <span class="tag">Borgo</span>
+                            </div>
+                            <div class="card-image-wrapper">
+                                <img src="immagini/2.png" class="card-image" alt="Piazza Umberto I">
+                            </div>
+                            <h4 class="card-title">Piazza Umberto I - Palermo</h4>
+                            <p class="card-description">Un angolo senza tempo nei Monti Sicani famoso per la sua fontana barocca e la storica comunità arbëreshe.</p>
+                        </div>
+                        <button onclick="apriDettaglio('umberto')" class="btn-card">scopri di più</button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card card-stone">
+                        <div>
+                            <div class="card-tags">
+                                <span class="tag">CATANIA</span>
+                                <span class="tag">Geometrico</span>
+                            </div>
+                            <div class="card-image-wrapper">
+                                <img src="immagini/3.png" class="card-image" alt="Piazza Carafa">
+                            </div>
+                            <h4 class="card-title">Piazza Carlo Maria Carafa - Catania</h4>
+                            <p class="card-description">Un capolavoro urbanistico unico in Europa dove 6 strade convergono simmetricamente in una prospettiva a ragnatela.</p>
+                        </div>
+                        <button onclick="apriDettaglio('carafa')" class="btn-card">scopri di più</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card card-lime">
+                        <div>
+                            <div class="card-tags">
+                                <span class="tag">PALERMO</span>
+                                <span class="tag">Piazza</span>
+                            </div>
+                            <div class="card-image-wrapper">
+                                <img src="immagini/4.png" class="card-image" alt="Piazza Marina">
+                            </div>
+                            <h4 class="card-title">Piazza Marina - Palermo</h4>
+                            <p class="card-description">Un vero e proprio abbraccio verde circondato da palazzi nobiliari.</p>
+                        </div>
+                        <button onclick="apriDettaglio('marina')" class="btn-card">scopri di più</button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card card-gray">
+                        <div>
+                            <div class="card-tags">
+                                <span class="tag">SIRACUSA</span>
+                                <span class="tag">Chiesa</span>
+                            </div>
+                            <div class="card-image-wrapper">
+                                <img src="immagini/5.png" class="card-image" alt="Piazza del Duomo">
+                            </div>
+                            <h4 class="card-title">Piazza del Duomo - Siracusa</h4>
+                            <p class="card-description">La maestosa Cattedrale che fonde mirabilmente le antiche colonne di un tempio greco con lo splendore del barocco.</p>
+                        </div>
+                        <button onclick="apriDettaglio('duomo')" class="btn-card">scopri di più</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner promozionale -->
+            <div class="banner-promo">
+                <div style="max-width: 32rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">Esperienze da vivere nelle piazze siciliane</h3>
+                    <p style="font-size: 0.875rem; color: #374151; margin-bottom: 1.5rem;">Street photography, passeggiate serali, festival e dettagli barocchi: le piazze sono il punto dove la Sicilia si racconta.</p>
+                    <button onclick="mostraSezione('esperienze')" class="btn-primary">vai alle esperienze</button>
+                </div>
+                <div class="banner-image-wrapper">
+                    <img src="immagini/6.png" class="card-image" alt="Esperienze">
+                </div>
+            </div>
+
+            <!-- Immagine panoramica inferiore -->
+            <div>
+                <img src="immagini/7.png" class="image-full" alt="Fontana Pretoria">
+            </div>
+        </section>
+
+        <!-- 2. ARCHIVIO PIAZZE -->
+         <!-- 2. ARCHIVIO PIAZZE -->
+        <section id="sec-piazze" class="hidden" style="display: flex; flex-direction: column; gap: 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 900;">Tutte le Piazze</h2>
+            <div class="cards-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                
+                <!-- Card 1: Umberto I -->
+                <div class="card card-blue" style="cursor: pointer;" onclick="apriDettaglio('umberto')">
+                    <div>
+                        <div class="card-tags">
+                            <span class="tag">PALERMO</span>
+                            <span class="tag">Borgo</span>
+                        </div>
+                        <div class="card-image-wrapper">
+                            <img src="immagini/2.png" class="card-image" alt="Piazza Umberto I">
+                        </div>
+                        <h3 class="card-title">Piazza Umberto I - Palermo</h3>
+                        <p class="card-description">Il borgo dei Monti Sicani e la fontana barocca.</p>
+                    </div>
+                    <button class="btn-card" style="margin-top: 1rem;">scopri di più</button>
+                </div>
+
+                <!-- Card 2: Carafa -->
+                <div class="card card-stone" style="cursor: pointer;" onclick="apriDettaglio('carafa')">
+                    <div>
+                        <div class="card-tags">
+                            <span class="tag">CATANIA</span>
+                            <span class="tag">Geometrico</span>
+                        </div>
+                        <div class="card-image-wrapper">
+                            <img src="immagini/3.png" class="card-image" alt="Piazza Carafa">
+                        </div>
+                        <h3 class="card-title">Piazza Carlo Maria Carafa - Catania</h3>
+                        <p class="card-description">La pianta esagonale a ragnatela di Grammichele.</p>
+                    </div>
+                    <button class="btn-card" style="margin-top: 1rem;">scopri di più</button>
+                </div>
+
+                <!-- Card 3: Duomo -->
+                <div class="card card-gray" style="cursor: pointer;" onclick="apriDettaglio('duomo')">
+                    <div>
+                        <div class="card-tags">
+                            <span class="tag">SIRACUSA</span>
+                            <span class="tag">Chiesa</span>
+                        </div>
+                        <div class="card-image-wrapper">
+                            <img src="immagini/5.png" class="card-image" alt="Piazza del Duomo">
+                        </div>
+                        <h3 class="card-title">Piazza del Duomo - Siracusa</h3>
+                        <p class="card-description">La maestosa Cattedrale barocca.</p>
+                    </div>
+                    <button class="btn-card" style="margin-top: 1rem;">scopri di più</button>
+                </div>
+
+                <!-- Card 4: Marina -->
+                <div class="card card-lime" style="cursor: pointer;" onclick="apriDettaglio('marina')">
+                    <div>
+                        <div class="card-tags">
+                            <span class="tag">PALERMO</span>
+                            <span class="tag">Piazza</span>
+                        </div>
+                        <div class="card-image-wrapper">
+                            <img src="immagini/4.png" class="card-image" alt="Piazza Marina">
+                        </div>
+                        <h3 class="card-title">Piazza Marina - Palermo</h3>
+                        <p class="card-description">Un abbraccio verde circondato da palazzi nobiliari.</p>
+                    </div>
+                    <button class="btn-card" style="margin-top: 1rem;">scopri di più</button>
+                </div>
+
+            </div>
+        </section>
+        <section id="sec-piazze" class="hidden" style="display: flex; flex-direction: column; gap: 2rem;">
+            <h2 style="font-size: 2rem; font-weight: 900;">Tutte le Piazze</h2>
+            <div class="cards-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                <div onclick="apriDettaglio('umberto')" style="padding: 1.5rem; background-color: #f9fafb; border-radius: 1.5rem; border: 1px solid #e5e7eb; cursor: pointer;">
+                    <h3 style="font-weight: 700; font-size: 1.25rem;">Piazza Umberto I - Palermo</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563; margin-top: 0.5rem;">Il borgo dei Monti Sicani e la fontana barocca.</p>
+                </div>
+                <div onclick="apriDettaglio('carafa')" style="padding: 1.5rem; background-color: #f9fafb; border-radius: 1.5rem; border: 1px solid #e5e7eb; cursor: pointer;">
+                    <h3 style="font-weight: 700; font-size: 1.25rem;">Piazza Carlo Maria Carafa - Catania</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563; margin-top: 0.5rem;">La pianta esagonale a ragnatela di Grammichele.</p>
+                </div>
+                <div onclick="apriDettaglio('duomo')" style="padding: 1.5rem; background-color: #f9fafb; border-radius: 1.5rem; border: 1px solid #e5e7eb; cursor: pointer;">
+                    <h3 style="font-weight: 700; font-size: 1.25rem;">Piazza del Duomo - Siracusa</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563; margin-top: 0.5rem;">Ortigia e lo splendore del barocco sul mare.</p>
+                </div>
+                <div onclick="apriDettaglio('marina')" style="padding: 1.5rem; background-color: #f9fafb; border-radius: 1.5rem; border: 1px solid #e5e7eb; cursor: pointer;">
+                    <h3 style="font-weight: 700; font-size: 1.25rem;">Piazza Marina - Palermo</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563; margin-top: 0.5rem;">Il monumentale Ficus e Palazzo Chiaramonte-Sterī.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ESPERIENZE -->
+        <section id="sec-esperienze" class="hidden" style="display: flex; flex-direction: column; gap: 3rem;">
+            <div class="hero-banner" style="height: 350px;">
+                <img src="immagini/14.png" class="hero-image" alt="Esperienze Banner">
+                <div class="hero-overlay">
+                    <h2 class="hero-title">Cosa fare nelle piazze siciliane</h2>
+                    <p class="hero-text">Idee veloci: street photography, passeggiate serali, mercati e dettagli barocchi.</p>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 48rem;">
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700;">Street photography</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563;">Prova a catturare luce calda, ombre e dettagli in pietra. In Sicilia l'ora d'oro è pura magia.</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700;">Visite guidate e barocco</h3>
+                    <p style="font-size: 0.875rem; color: #4b5563;">Molte piazze raccontano epoche diverse: esplora facciate, simboli e prospettive con una guida.</p>
+                </div> <div>
+                    <h3 style="font-size: 1.125rem; font-weight: 700;">Mercati e vita quotidiana </h3>
+                    <p style="font-size: 0.875rem; color: #4b5563;">Se sei vicino a un mercato, entra: colori, voci e profumi rendono la piazza un’esperienza completa.</p>
+                </div>
+            </div>
+
+            <div style="width: 100%; height: 320px; border-radius: 2rem; overflow: hidden;">
+                <img src="immagini/15.png" class="card-image" alt="Folla in piazza">
+            </div>
+        </section>
+
+        <!-- 4. SCHEDA DETTAGLIO -->
+        <section id="sec-dettaglio" class="hidden" style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="hero-banner" style="height: 400px;">
+                <img id="d-img-hero" src="" class="hero-image" alt="Dettaglio Hero">
+                <div class="hero-overlay">
+                    <h2 id="d-titolo" class="hero-title"></h2>
+                </div>
+            </div>
+
+            <div class="grid-3-col">
+                <div>
+                    <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">Perché è speciale</h4>
+                    <p id="d-speciale" style="color: #4b5563;"></p>
+                </div>
+                <div>
+                    <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">Cosa notare</h4>
+                    <p id="d-notare" style="color: #4b5563;"></p>
+                </div>
+                <div>
+                    <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">Consigli rapidi</h4>
+                    <p id="d-consigli" style="color: #4b5563;"></p>
+                </div>
+            </div>
+
+            <div id="d-tags" class="tags-container"></div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"><img id="d-img-1" src="" class="gallery-image" alt="Gallery 1"></div>
+                <div class="gallery-item"><img id="d-img-2" src="" class="gallery-image" alt="Gallery 2"></div>
+            </div>
+
+            <div>
+                <img id="d-img-extra" src="" class="image-full" alt="Dettaglio extra">
+            </div>
+
+            <div>
+                <button onclick="mostraSezione('home')" class="btn-primary">Torna alle Piazze</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        &copy; 2026 Piazze di Sicilia. Tutti i diritti riservati.
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT -->
+    <script>
+        const databasePiazze = {
+            umberto: {
+                titolo: "Piazza Umberto I - Palermo",
+                speciale: "Piazza Umberto I è speciale perché è il cuore pulsante di Palazzo Adriano, un borgo dei Monti Sicani reso celebre in tutto il mondo dal film premio Oscar Nuovo Cinema Paradiso di Giuseppe Tornatore.",
+                notare: "La scenografica fontana barocca in marmo bianco al centro della piazza, le facciate dei palazzi storici che conservano un'atmosfera intima e senza tempo, e i segni tangibili della storica comunità arbëreshe.",
+                consigli: "Fermati a goderti la quiete del borgo seduto nei dintorni della fontana, cerca gli angoli resi celebri dalle riprese cinematografiche e concediti il tempo di scoprire le particolarità culturali locali.",
+                tags: ["Fontana", "Centro storico", "Palazzi", "Passeggio"],
+                imgHero: "immagini/16.png",
+                img1: "immagini/17.png",
+                img2: "immagini/18.png",
+                imgExtra: "immagini/19.png"
+            },
+            carafa: {
+                titolo: "Piazza Carlo Maria Carafa, Catania",
+                speciale: "Piazza Carlo Maria Carafa è speciale perché rappresenta un unicum urbanistico in Europa, essendo stata ricostruita con una perfetta pianta esagonale a ragnatela dopo il devastante terremoto del 1693.",
+                notare: "La straordinaria simmetria geometrica della piazza, che fa convergere esattamente sei strade in modo speculare, offrendo una prospettiva visiva e un impianto architettonico introvabile altrove.",
+                consigli: "Posizionati al centro esatto della piazza per cogliere la geometria a ragnatela, esplora le vie che si diramano simmetricamente e goditi un caffè in questo fascinoso borgo barocco.",
+                tags: ["Geometria", "Simmetria", "Barocco", "Unicità"],
+                imgHero: "immagini/20.png",
+                img1: "immagini/21.png",
+                img2: "immagini/22.png",
+                imgExtra: "immagini/23.png"
+            },
+            duomo: {
+                titolo: "Piazza Duomo - Siracusa",
+                speciale: "Piazza Duomo è uno dei simboli più celebri della Sicilia, un luogo dove architettura, storia e la vivacità della vita di tutti i giorni si fondono in una grande piazza che fa da salotto.",
+                notare: "La splendida atmosfera di questa piazza, modellata dai giochi di luce del mattino e del tramonto, si svela attraverso i suoi punti di interesse tra cui monumenti e facciate arricchiti da dettagli barocchi.",
+                consigli: "Per vivere al meglio l'esperienza, ti consiglio di recarti sul posto la mattina presto o al tramonto per sfuggire alla folla e goderti l'atmosfera autentica della città e della splendida Ortigia.",
+                tags: ["Barocco", "Ortigia", "Tramonto", "Mare"],
+                imgHero: "immagini/24.png",
+                img1: "immagini/25.png",
+                img2: "immagini/26.png",
+                imgExtra: "immagini/27.png"
+            },
+            marina: {
+                titolo: "Piazza Marina - Palermo",
+                speciale: "Custodisce il maestoso Ficus macrophylla di Villa Garibaldi e unisce secoli di storia tra palazzi nobiliari e vicende antiche.",
+                notare: "Le spettacolari radici aeree dell'albero gigante, le facciate storiche dei palazzi circostanti e la suggestiva architettura di Palazzo Chiaramonte-Sterī.",
+                consigli: "Visita la mattina presto per godere della quieta atmosfera o passa nel fine settimana per esplorare il vivace mercato storico.",
+                tags: ["Antiquariato", "Ficus", "Storia", "Palermo"],
+                imgHero: "immagini/28.png",
+                img1: "immagini/29.png",
+                img2: "immagini/30.png",
+                imgExtra: "immagini/31.png"
+            }
+        };
+
+        function mostraSezione(id) {
+            const sezioni = ['sec-home', 'sec-piazze', 'sec-esperienze', 'sec-dettaglio'];
+            sezioni.forEach(s => {
+                const el = document.getElementById(s);
+                if (el) el.classList.add('hidden');
+            });
+
+            const target = document.getElementById('sec-' + id);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function apriDettaglio(key) {
+            const data = databasePiazze[key];
+            if (!data) return;
+
+            document.getElementById('d-titolo').innerText = data.titolo;
+            document.getElementById('d-speciale').innerText = data.speciale;
+            document.getElementById('d-notare').innerText = data.notare;
+            document.getElementById('d-consigli').innerText = data.consigli;
+            
+            document.getElementById('d-img-hero').src = data.imgHero;
+            document.getElementById('d-img-1').src = data.img1;
+            document.getElementById('d-img-2').src = data.img2;
+            document.getElementById('d-img-extra').src = data.imgExtra;
+
+            const tContainer = document.getElementById('d-tags');
+            tContainer.innerHTML = '';
+            data.tags.forEach(t => {
+                const s = document.createElement('span');
+                s.className = "detail-tag";
+                s.innerText = t;
+                tContainer.appendChild(s);
+            });
+
+            const sezioni = ['sec-home', 'sec-piazze', 'sec-esperienze', 'sec-dettaglio'];
+            sezioni.forEach(s => {
+                const el = document.getElementById(s);
+                if (el) el.classList.add('hidden');
+            });
+
+            document.getElementById('sec-dettaglio').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
